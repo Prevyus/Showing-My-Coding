@@ -6,8 +6,8 @@ void Ordena_Seleccion();
 void main()
 {
     int i = 0;
-    printf ( "\n\n ORDENAMIENTO POR SELECCION \n");
-    printf ("\n\n Arreglo antes el ordenamiento:\n");
+    printf ( "\n\n SORTING BY SELECTION \n");
+    printf ("\n\n Numbers before sorting:\n");
 
     for(i=0; i<=4; i++)
     {
@@ -16,7 +16,7 @@ void main()
        
         Ordena_Seleccion();
 
-    printf ("\n\nArreglo despues el ordenamiento:\n");
+    printf ("\n\nNumbers after sorting:\n");
 
     for(i=0; i<=4; i++)
     {
