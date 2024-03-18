@@ -1,0 +1,526 @@
+#include <stdio.h>
+#include <math.h>
+//CODIGO COMPLETAMENTE POR SANTIAGO VALERA ROCHA
+//Grupos de Variables
+int dfi1,dfi2,dfi3,dfi4,dfi5,dfi6,dfi7,dfi8,dfi9,dfi10,dfi11;
+int ofi1,ofi2,ofi3,ofi4,ofi5,ofi6,ofi7,ofi8,ofi9,ofi10,ofi11;
+int fia1,fia2,fia3,fia4,fia5,fia6,fia7,fia8,fia9,fia10;
+int fian1,fian2,fian3,fian4,fian5,fian6,fian7,fian8,fian9,fian10,fian11;
+int dfian1,dfian2,dfian3,dfian4,dfian5,dfian6,dfian7,dfian8,dfian9,dfian10;
+float lri1,lri2,lri3,lri4,lri5,lri6,lri7,lri8,lri9,lri10;
+float lrs1,lrs2,lrs3,lrs4,lrs5,lrs6,lrs7,lrs8,lrs9,lrs10;
+float lrc1,lrc2,lrc3,lrc4,lrc5,lrc6,lrc7,lrc8,lrc9,lrc10;
+float dxi1,dxi2,dxi3,dxi4,dxi5,dxi6,dxi7,dxi8,dxi9,dxi10,dxi11;
+float oxi1,oxi2,oxi3,oxi4,oxi5,oxi6,oxi7,oxi8,oxi9,oxi10,oxi11;
+float fixi1,fixi2,fixi3,fixi4,fixi5,fixi6,fixi7,fixi8,fixi9,fixi10,fixi11;
+float xix1,xix2,xix3,xix4,xix5,xix6,xix7,xix8,xix9,xix10;
+float xixC1,xixC2,xixC3,xixC4,xixC5,xixC6,xixC7,xixC8,xixC9,xixC10;
+float fixixC1,fixixC2,fixixC3,fixixC4,fixixC5,fixixC6,fixixC7,fixixC8,fixixC9,fixixC10;
+
+//Variables Normales
+int rFac,fic,re,fil, curN,nt,nt1 = 0,nt2 = 0, N,NmenosUno,nmafi,d1,d2,d1masd2,mN,bfac,fac;
+float rFacFloat,ficFloat,Mediana,iMediana,IiMediana,Media,S2,S,idcI,idcD,I,Li,d1masd2float,d1entred1yd2,Ipord1entred1yd2,Moda,eLrc;
+char hayXi;
+
+//Funciones Rapidas
+int p(){printf("%c",re);}int ure(){re=80;p();re=111;p();re=114;p();printf(": ");re=83;p();re=86;p();re=82;p();}
+//Funciones para Ordenacion
+int ofi1ofi2(){if (ofi1 > ofi2){nt1 = nt1 + ofi1;ofi1 = 0;nt2 = nt2 + ofi2;ofi2 = 0;ofi1 = ofi1 + nt2;ofi2 = ofi2 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi2ofi3(){if (ofi2 > ofi3){nt1 = nt1 + ofi2;ofi2 = 0;nt2 = nt2 + ofi3;ofi3 = 0;ofi2 = ofi2 + nt2;ofi3 = ofi3 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi3ofi4(){if (ofi3 > ofi4){nt1 = nt1 + ofi3;ofi3 = 0;nt2 = nt2 + ofi4;ofi4 = 0;ofi3 = ofi3 + nt2;ofi4 = ofi4 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi4ofi5(){if (ofi4 > ofi5){nt1 = nt1 + ofi4;ofi4 = 0;nt2 = nt2 + ofi5;ofi5 = 0;ofi4 = ofi4 + nt2;ofi5 = ofi5 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi5ofi6(){if (ofi5 > ofi6){nt1 = nt1 + ofi5;ofi5 = 0;nt2 = nt2 + ofi6;ofi6 = 0;ofi5 = ofi5 + nt2;ofi6 = ofi6 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi6ofi7(){if (ofi6 > ofi7){nt1 = nt1 + ofi6;ofi6 = 0;nt2 = nt2 + ofi7;ofi7 = 0;ofi6 = ofi6 + nt2;ofi7 = ofi7 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi7ofi8(){if (ofi7 > ofi8){nt1 = nt1 + ofi7;ofi7 = 0;nt2 = nt2 + ofi8;ofi8 = 0;ofi7 = ofi7 + nt2;ofi8 = ofi8 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi8ofi9(){if (ofi8 > ofi9){nt1 = nt1 + ofi8;ofi8 = 0;nt2 = nt2 + ofi9;ofi9 = 0;ofi8 = ofi8 + nt2;ofi9 = ofi9 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi9ofi10(){if (ofi9 > ofi10){nt1 = nt1 + ofi9;ofi9 = 0;nt2 = nt2 + ofi10;ofi10 = 0;ofi9 = ofi9 + nt2;ofi10 = ofi10 + nt1;nt1 = 0;nt2 = 0;}}
+int ofi10ofi11(){if (ofi10 > ofi11){nt1 = nt1 + ofi10;ofi10 = 0;nt2 = nt2 + ofi11;ofi11 = 0;ofi10 = ofi10 + nt2;ofi11 = ofi11 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi1oxi2(){if (oxi1 > oxi2){nt1 = nt1 + oxi1;oxi1 = 0;nt2 = nt2 + oxi2;oxi2 = 0;oxi1 = oxi1 + nt2;oxi2 = oxi2 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi2oxi3(){if (oxi2 > oxi3){nt1 = nt1 + oxi2;oxi2 = 0;nt2 = nt2 + oxi3;oxi3 = 0;oxi2 = oxi2 + nt2;oxi3 = oxi3 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi3oxi4(){if (oxi3 > oxi4){nt1 = nt1 + oxi3;oxi3 = 0;nt2 = nt2 + oxi4;oxi4 = 0;oxi3 = oxi3 + nt2;oxi4 = oxi4 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi4oxi5(){if (oxi4 > oxi5){nt1 = nt1 + oxi4;oxi4 = 0;nt2 = nt2 + oxi5;oxi5 = 0;oxi4 = oxi4 + nt2;oxi5 = oxi5 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi5oxi6(){if (oxi5 > oxi6){nt1 = nt1 + oxi5;oxi5 = 0;nt2 = nt2 + oxi6;oxi6 = 0;oxi5 = oxi5 + nt2;oxi6 = oxi6 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi6oxi7(){if (oxi6 > oxi7){nt1 = nt1 + oxi6;oxi6 = 0;nt2 = nt2 + oxi7;oxi7 = 0;oxi6 = oxi6 + nt2;oxi7 = oxi7 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi7oxi8(){if (oxi7 > oxi8){nt1 = nt1 + oxi7;oxi7 = 0;nt2 = nt2 + oxi8;oxi8 = 0;oxi7 = oxi7 + nt2;oxi8 = oxi8 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi8oxi9(){if (oxi8 > oxi9){nt1 = nt1 + oxi8;oxi8 = 0;nt2 = nt2 + oxi9;oxi9 = 0;oxi8 = oxi8 + nt2;oxi9 = oxi9 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi9oxi10(){if (oxi9 > oxi10){nt1 = nt1 + oxi9;oxi9 = 0;nt2 = nt2 + oxi10;oxi10 = 0;oxi9 = oxi9 + nt2;oxi10 = oxi10 + nt1;nt1 = 0;nt2 = 0;}}
+int oxi10oxi11(){if (oxi10 > oxi11){nt1 = nt1 + oxi10;oxi10 = 0;nt2 = nt2 + oxi11;oxi11 = 0;oxi10 = oxi10 + nt2;oxi11 = oxi11 + nt1;nt1 = 0;nt2 = 0;}}
+
+int fian1fian2(){if (fian1 > fian2){nt1 = nt1 + fian1;fian1 = 0;nt2 = nt2 + fian2;fian2 = 0;fian1 = fian1 + nt2;fian2 = fian2 + nt1;nt1 = 0;nt2 = 0;}}
+int fian2fian3(){if (fian2 > fian3){nt1 = nt1 + fian2;fian2 = 0;nt2 = nt2 + fian3;fian3 = 0;fian2 = fian2 + nt2;fian3 = fian3 + nt1;nt1 = 0;nt2 = 0;}}
+int fian3fian4(){if (fian3 > fian4){nt1 = nt1 + fian3;fian3 = 0;nt2 = nt2 + fian4;fian4 = 0;fian3 = fian3 + nt2;fian4 = fian4 + nt1;nt1 = 0;nt2 = 0;}}
+int fian4fian5(){if (fian4 > fian5){nt1 = nt1 + fian4;fian4 = 0;nt2 = nt2 + fian5;fian5 = 0;fian4 = fian4 + nt2;fian5 = fian5 + nt1;nt1 = 0;nt2 = 0;}}
+int fian5fian6(){if (fian5 > fian6){nt1 = nt1 + fian5;fian5 = 0;nt2 = nt2 + fian6;fian6 = 0;fian5 = fian5 + nt2;fian6 = fian6 + nt1;nt1 = 0;nt2 = 0;}}
+int fian6fian7(){if (fian6 > fian7){nt1 = nt1 + fian6;fian6 = 0;nt2 = nt2 + fian7;fian7 = 0;fian6 = fian6 + nt2;fian7 = fian7 + nt1;nt1 = 0;nt2 = 0;}}
+int fian7fian8(){if (fian7 > fian8){nt1 = nt1 + fian7;fian7 = 0;nt2 = nt2 + fian8;fian8 = 0;fian7 = fian7 + nt2;fian7 = fian8 + nt1;nt1 = 0;nt2 = 0;}}
+int fian8fian9(){if (fian8 > fian9){nt1 = nt1 + fian8;fian8 = 0;nt2 = nt2 + fian9;fian9 = 0;fian8 = fian8 + nt2;fian9 = fian9 + nt1;nt1 = 0;nt2 = 0;}}
+int fian9fian10(){if (fian9 > fian10){nt1 = nt1 + fian9;fian9 = 0;nt2 = nt2 + fian10;fian10 = 0;fian9 = fian9 + nt2;fian10 = fian10 + nt1;nt1 = 0;nt2 = 0;}}
+int fian10fian11(){if (fian1 > fian2){nt1 = nt1 + fian10;fian10 = 0;nt2 = nt2 + fian11;fian11 = 0;fian10 = fian10 + nt2;fian11 = fian11 + nt1;nt1 = 0;nt2 = 0;}}
+
+int main()
+{
+    // PASO 1
+    ure();
+    hayXi = 'n';
+    printf("\nIntroduce numero de filas en la tabla: ");
+    scanf("%d",&fil);
+    if(fil > 10){printf("No se pueden tablas con mas de 10 filas");return 0;}
+   
+    // PASO 2
+    printf("\nIntroduce los numeros de la columna fi\n#1: ");
+    scanf("%d",&dfi1);
+    curN = 1;
+    if(curN < fil)
+    {printf("\n#2: ");
+    scanf("%d",&dfi2);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#3: ");
+    scanf("%d",&dfi3);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#4: ");
+    scanf("%d",&dfi4);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#5: ");
+    scanf("%d",&dfi5);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#6: ");
+    scanf("%d",&dfi6);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#7: ");
+    scanf("%d",&dfi7);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#8: ");
+    scanf("%d",&dfi8);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#9: ");
+    scanf("%d",&dfi9);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#10: ");
+    scanf("%d",&dfi10);
+    curN + 1;} curN = 0;
+
+    // PASO 2.1
+    if(curN<fil)
+    {fia1=dfi1;}
+    if(curN<fil)
+    {fia2=fia1+dfi2;}
+    if(curN<fil)
+    {fia3=fia2+dfi3;}
+    if(curN<fil)
+    {fia4=fia3+dfi4;}
+    if(curN<fil)
+    {fia5=fia4+dfi5;}
+    if(curN<fil)
+    {fia6=fia5+dfi6;}
+    if(curN<fil)
+    {fia7=fia6+dfi7;}
+    if(curN<fil)
+    {fia8=fia7+dfi8;}
+    if(curN<fil)
+    {fia9=fia8+dfi9;}
+    if(curN<fil)
+    {fia10=fia9+dfi10;}
+    curN=0;
+   
+    // PASO 3
+    ofi1 = dfi1;ofi2 = dfi2;ofi3 = dfi3;ofi4 = dfi4;ofi5 = dfi5;ofi6 = dfi6;ofi7 = dfi7;ofi8 = dfi8;ofi9 = dfi9;ofi10 = dfi10;ofi11 = dfi11;
+   
+    if(ofi1 == 0){ofi1 = 9999;}
+    if(ofi2 == 0){ofi2 = 9999;}
+    if(ofi3 == 0){ofi3 = 9999;}
+    if(ofi4 == 0){ofi4 = 9999;}
+    if(ofi5 == 0){ofi5 = 9999;}
+    if(ofi6 == 0){ofi6 = 9999;}
+    if(ofi7 == 0){ofi7 = 9999;}
+    if(ofi8 == 0){ofi8 = 9999;}
+    if(ofi9 == 0){ofi9 = 9999;}
+    if(ofi10 == 0){ofi10 = 9999;}
+    if(ofi11 == 0){ofi11 = 9999;}
+   
+    if(curN<fil){if(ofi1>ofi2){ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi2>ofi3){ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi3>ofi4){ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi4>ofi5){ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi5>ofi6){ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi6>ofi7){ofi6ofi7();ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi7>ofi8){ofi7ofi8();ofi6ofi7();ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi8>ofi9){ofi8ofi9();ofi7ofi8();ofi6ofi7();ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;}
+    if(curN<fil){if(ofi9>ofi10){ofi9ofi10();ofi8ofi9();ofi7ofi8();ofi6ofi7();ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;} curN = 0;
+    if(curN<fil){if(ofi10>ofi11){ofi10ofi11();ofi9ofi10();ofi8ofi9();ofi7ofi8();ofi6ofi7();ofi5ofi6();ofi4ofi5();ofi3ofi4();ofi2ofi3();ofi1ofi2();}curN=curN+ 1;} curN = 0;
+   
+    // PASO 4
+    printf("\nIntroduce los datos izquierdos de la columna de L.R.C.\n#1: ");
+    scanf("%f",&lri1);
+    curN = 1;
+    if(curN < fil)
+    {printf("\n#2: ");
+    scanf("%f",&lri2);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#3: ");
+    scanf("%f",&lri3);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#4: ");
+    scanf("%f",&lri4);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#5: ");
+    scanf("%f",&lri5);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#6: ");
+    scanf("%f",&lri6);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#7: ");
+    scanf("%f",&lri7);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#8: ");
+    scanf("%f",&lri8);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#9: ");
+    scanf("%f",&lri9);
+    curN = curN + 1;}
+    if(curN < fil)
+    {printf("\n#10: ");
+    scanf("%f",&lri10);
+    curN + 1;} curN = 0;
+
+    eLrc = lri2 - lri1;
+    lrs1 = lri1 + eLrc;
+    lrs2 = lri2 + eLrc;
+    lrs3 = lri3 + eLrc;
+    lrs4 = lri4 + eLrc;
+    lrs5 = lri5 + eLrc;
+    lrs6 = lri6 + eLrc;
+    lrs7 = lri7 + eLrc;
+    lrs8 = lri8 + eLrc;
+    lrs9 = lri9 + eLrc;
+    lrs10 = lri10 + eLrc;
+   
+    lrc1=lri1+lrs1;dxi1=lrc1/2;
+    lrc2=lri2+lrs2;dxi2=lrc2/2;
+    lrc3=lri3+lrs3;dxi3=lrc3/2;
+    lrc4=lri4+lrs4;dxi4=lrc4/2;
+    lrc5=lri5+lrs5;dxi5=lrc5/2;
+    lrc6=lri6+lrs6;dxi6=lrc6/2;
+    lrc7=lri7+lrs7;dxi7=lrc7/2;
+    lrc8=lri8+lrs8;dxi8=lrc8/2;
+    lrc9=lri9+lrs9;dxi9=lrc9/2;
+    lrc10=lri10+lrs10;dxi10=lrc10/2;
+   
+    // PASO 5
+   
+    oxi1 = dxi1;
+    oxi2 = dxi2;
+    oxi3 = dxi3;
+    oxi4 = dxi4;
+    oxi5 = dxi5;
+    oxi6 = dxi6;
+    oxi7 = dxi7;
+    oxi8 = dxi8;
+    oxi9 = dxi9;
+    oxi10 = dxi10;
+    oxi11 = dxi11;
+   
+    if(oxi1 == 0){oxi1 = 9999;}
+    if(oxi2 == 0){oxi2 = 9999;}
+    if(oxi3 == 0){oxi3 = 9999;}
+    if(oxi4 == 0){oxi4 = 9999;}
+    if(oxi5 == 0){oxi5 = 9999;}
+    if(oxi6 == 0){oxi6 = 9999;}
+    if(oxi7 == 0){oxi7 = 9999;}
+    if(oxi8 == 0){oxi8 = 9999;}
+    if(oxi9 == 0){oxi9 = 9999;}
+    if(oxi10 == 0){oxi10 = 9999;}
+    if(oxi11 == 0){oxi11 = 9999;}
+   
+    if(curN<fil){if(oxi1>oxi2){oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi2>oxi3){oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi3>oxi4){oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi4>oxi5){oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi5>oxi6){oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi6>oxi7){oxi6oxi7();oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi7>oxi8){oxi7oxi8();oxi6oxi7();oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi8>oxi9){oxi8oxi9();oxi7oxi8();oxi6oxi7();oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;}
+    if(curN<fil){if(oxi9>oxi10){oxi9oxi10();oxi8oxi9();oxi7oxi8();oxi6oxi7();oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;} curN = 0;
+    if(curN<fil){if(oxi1>oxi11){oxi10oxi11();oxi9oxi10();oxi8oxi9();oxi7oxi8();oxi6oxi7();oxi5oxi6();oxi4oxi5();oxi3oxi4();oxi2oxi3();oxi1oxi2();}curN=curN+ 1;} curN = 0;
+   
+    // PASO 6
+    if(curN<fil){N = dfi1 + dfi2;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi3;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi4;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi5;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi6;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi7;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi8;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi9;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi10;curN=curN+ 1;}
+    if(curN<fil){N = N + dfi11;curN=curN+ 1;}curN = 0;
+    NmenosUno = N - 1;
+    mN = N / 2;
+   
+    // PASO 6.1
+    if(curN<fil){fian1=mN-fia1;
+    if(fian1<0){fian1=fian1* -1;}}
+    if(curN<fil){fian2=mN-fia2;
+    if(fian2<0){fian2=fian2* -1;}}
+    if(curN<fil){fian3=mN-fia3;
+    if(fian3<0){fian3=fian3* -1;}}
+    if(curN<fil){fian4=mN-fia4;
+    if(fian4<0){fian4=fian4* -1;}}
+    if(curN<fil){fian5=mN-fia5;
+    if(fian5<0){fian5=fian5* -1;}}
+    if(curN<fil){fian6=mN-fia6;
+    if(fian6<0){fian6=fian6* -1;}}
+    if(curN<fil){fian7=mN-fia7;
+    if(fian7<0){fian7=fian7* -1;}}
+    if(curN<fil){fian8=mN-fia8;
+    if(fian8<0){fian8=fian8* -1;}}
+    if(curN<fil){fian9=mN-fia9;
+    if(fian9<0){fian9=fian9* -1;}}
+    if(curN<fil){fian10=mN-fia10;
+    if(fian10<0){fian10=fian10* -1;}}
+    curN=0;
+   
+    // PASO 6.2
+    dfian1 = fian1;
+    dfian2 = fian2;
+    dfian3 = fian3;
+    dfian4 = fian4;
+    dfian5 = fian5;
+    dfian6 = fian6;
+    dfian7 = fian7;
+    dfian8 = fian8;
+    dfian9 = fian9;
+    dfian10 = fian10;
+   
+    // PASO 6.3
+    if(curN<fil){if(fian1>fian2){
+    fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian2>fian3){
+    fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian3>fian4){
+    fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian4>fian5){
+    fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian5>fian6){
+    fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian6>fian7){
+    fian6fian7();fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian7>fian8){
+    fian7fian8();fian6fian7();fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian8>fian9){
+    fian8fian9();fian7fian8();fian6fian7();fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;}
+    if(curN<fil){if(fian9>fian10){
+    fian9fian10();fian8fian9();fian7fian8();fian6fian7();fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;} curN = 0;
+    if(curN<fil){if(fian10>fian11){
+    fian10fian11();fian9fian10();fian8fian9();fian7fian8();fian6fian7();fian5fian6();fian4fian5();fian3fian4();fian2fian3();fian1fian2();
+    }curN=curN+ 1;} curN = 0;
+   
+    // PASO 6.4
+    if(dfian1 == fian1){bfac = fia1;fac= 0;}
+    else {if(dfian2 == fian1){bfac = fia2;fac=fia1;}
+    else {if(dfian3 == fian1){bfac = fia3;fac=fia2;}
+    else {if(dfian4 == fian1){bfac = fia4;fac=fia3;}
+    else {if(dfian5 == fian1){bfac = fia5;fac=fia4;}
+    else {if(dfian6 == fian1){bfac = fia6;fac=fia5;}
+    else {if(dfian7 == fian1){bfac = fia7;fac=fia6;}
+    else {if(dfian8 == fian1){bfac = fia8;fac=fia7;}
+    else {if(dfian9 == fian1){bfac = fia9;fac=fia8;}
+    else {if(dfian10 == fian1){bfac = fia10;fac=fia9;}}}}}}}}}}
+
+    // PASO 7
+    if(curN<fil){fixi1 = dfi1 * dxi1;curN=curN+ 1;}
+    if(curN<fil){fixi2 = dfi2 * dxi2;curN=curN+ 1;}
+    if(curN<fil){fixi3 = dfi3 * dxi3;curN=curN+ 1;}
+    if(curN<fil){fixi4 = dfi4 * dxi4;curN=curN+ 1;}
+    if(curN<fil){fixi5 = dfi5 * dxi5;curN=curN+ 1;}
+    if(curN<fil){fixi6 = dfi6 * dxi6;curN=curN+ 1;}
+    if(curN<fil){fixi7 = dfi7 * dxi7;curN=curN+ 1;}
+    if(curN<fil){fixi8 = dfi8 * dxi8;curN=curN+ 1;}
+    if(curN<fil){fixi9 = dfi9 * dxi9;curN=curN+ 1;}
+    if(curN<fil){fixi10 = dfi10 * dxi10;curN=curN+ 1;}
+    curN = 0;
+   
+    // PASO 8
+    if(curN<fil){Media = fixi1 + fixi2;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi3;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi4;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi5;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi6;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi7;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi8;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi9;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi10;curN=curN+ 1;}
+    if(curN<fil){Media = Media + fixi11;curN=curN+ 1;}curN = 0;
+    Media = Media / N;
+
+    // PASO 9
+    if(curN<fil){xix1 = dxi1 - Media;curN=curN+ 1;}
+    if(curN<fil){xix2 = dxi2 - Media;curN=curN+ 1;}
+    if(curN<fil){xix3 = dxi3 - Media;curN=curN+ 1;}
+    if(curN<fil){xix4 = dxi4 - Media;curN=curN+ 1;}
+    if(curN<fil){xix5 = dxi5 - Media;curN=curN+ 1;}
+    if(curN<fil){xix6 = dxi6 - Media;curN=curN+ 1;}
+    if(curN<fil){xix7 = dxi7 - Media;curN=curN+ 1;}
+    if(curN<fil){xix8 = dxi8 - Media;curN=curN+ 1;}
+    if(curN<fil){xix9 = dxi9 - Media;curN=curN+ 1;}
+    if(curN<fil){xix10 = dxi10 - Media;curN=curN+ 1;}
+    curN = 0;
+   
+    // PASO 10
+    if(curN<fil){xixC1 = xix1 * xix1;curN=curN+ 1;}
+    if(curN<fil){xixC2 = xix2 * xix2;curN=curN+ 1;}
+    if(curN<fil){xixC3 = xix3 * xix3;curN=curN+ 1;}
+    if(curN<fil){xixC4 = xix4 * xix4;curN=curN+ 1;}
+    if(curN<fil){xixC5 = xix5 * xix5;curN=curN+ 1;}
+    if(curN<fil){xixC6 = xix6 * xix6;curN=curN+ 1;}
+    if(curN<fil){xixC7 = xix7 * xix7;curN=curN+ 1;}
+    if(curN<fil){xixC8 = xix8 * xix8;curN=curN+ 1;}
+    if(curN<fil){xixC9 = xix9 * xix9;curN=curN+ 1;}
+    if(curN<fil){xixC10 = xix10 * xix10;curN=curN+ 1;}
+    curN = 0;
+   
+    // PASO 11
+    if(curN<fil){fixixC1 = xixC1 * dfi1;curN=curN+ 1;}
+    if(curN<fil){fixixC2 = xixC2 * dfi2;curN=curN+ 1;}
+    if(curN<fil){fixixC3 = xixC3 * dfi3;curN=curN+ 1;}
+    if(curN<fil){fixixC4 = xixC4 * dfi4;curN=curN+ 1;}
+    if(curN<fil){fixixC5 = xixC5 * dfi5;curN=curN+ 1;}
+    if(curN<fil){fixixC6 = xixC6 * dfi6;curN=curN+ 1;}
+    if(curN<fil){fixixC7 = xixC7 * dfi7;curN=curN+ 1;}
+    if(curN<fil){fixixC8 = xixC8 * dfi8;curN=curN+ 1;}
+    if(curN<fil){fixixC9 = xixC9 * dfi9;curN=curN+ 1;}
+    if(curN<fil){fixixC10 = xixC10 * dfi10;curN=curN+ 1;}
+    curN = 0;
+   
+    // PASO 12
+    if(curN<fil){S2 = fixixC1 + fixixC2;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC3;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC4;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC5;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC6;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC7;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC8;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC9;curN=curN+ 1;}
+    if(curN<fil){S2 = S2 + fixixC10;curN=curN+ 1;}curN = 0;
+    S2 = S2 / NmenosUno;
+
+    // PASO 13
+    S = sqrt(S2);
+
+    // PASO 14
+    if(curN<fil){nt=ofi1;curN=curN+ 1;}
+    if(curN<fil){nt=ofi2;curN=curN+ 1;}
+    if(curN<fil){nt=ofi3;curN=curN+ 1;}
+    if(curN<fil){nt=ofi4;curN=curN+ 1;}
+    if(curN<fil){nt=ofi5;curN=curN+ 1;}
+    if(curN<fil){nt=ofi6;curN=curN+ 1;}
+    if(curN<fil){nt=ofi7;curN=curN+ 1;}
+    if(curN<fil){nt=ofi8;curN=curN+ 1;}
+    if(curN<fil){nt=ofi9;curN=curN+ 1;}
+    if(curN<fil){nt=ofi10;curN=curN+ 1;}curN=0;
+    nmafi = nt;nt = 0;
+
+    // PASO 15
+    if(dfi1 == nmafi){Li=lri1;d1=nmafi;d2=nmafi-dfi2;}
+    else {if(dfi2 == nmafi){Li=lri2;d1=nmafi-dfi1;d2=nmafi-dfi3;}
+    else {if(dfi3 == nmafi){Li=lri3;d1=nmafi-dfi2;d2=nmafi-dfi4;}
+    else {if(dfi4 == nmafi){Li=lri4;d1=nmafi-dfi3;d2=nmafi-dfi5;}
+    else {if(dfi5 == nmafi){Li=lri5;d1=nmafi-dfi4;d2=nmafi-dfi6;}
+    else {if(dfi6 == nmafi){Li=lri6;d1=nmafi-dfi5;d2=nmafi-dfi7;}
+    else {if(dfi7 == nmafi){Li=lri7;d1=nmafi-dfi6;d2=nmafi-dfi8;}
+    else {if(dfi8 == nmafi){Li=lri8;d1=nmafi-dfi7;d2=nmafi-dfi9;}
+    else {if(dfi9 == nmafi){Li=lri9;d1=nmafi-dfi8;d2=nmafi-dfi10;}
+    else {if(dfi10 == nmafi){Li=lri10;d1=nmafi-dfi9;d2=nmafi;}}}}}}}}}}
+   
+
+    // PASO 16
+    printf("\nIntroduce (sin el guion) los dos numeros del intervalo de clase que estan a la izquierda del numero (%d) en la columna de fi: ",nmafi);
+    scanf("%f %f",&idcI,&idcD);
+    I = idcD - idcI;
+
+    //PASO 17 ya no existe xd
+   
+    //PASO 18
+    d1masd2 = d1 + d2;
+    d1masd2float = d1masd2;
+    d1entred1yd2 = d1 / d1masd2float;
+    Ipord1entred1yd2 = I * d1entred1yd2;
+    Moda = Li + Ipord1entred1yd2;
+
+    // PASO 18.1
+    rFac = mN - fac;
+    fic = bfac - fac;
+    rFacFloat = rFac;
+    ficFloat = fic;
+    iMediana = rFacFloat / ficFloat;
+    IiMediana = I * iMediana;
+    Mediana = Li + IiMediana;
+   
+    // PASO 19: RESULTADOS
+    curN=0;
+    printf("\n===========\nRESULTADOS:\n===========\n");
+    printf("\nXi:");
+    if(curN<fil){printf("\n#1: %f",dxi1);curN=curN+ 1;}
+    if(curN<fil){printf("\n#2: %f",dxi2);curN=curN+ 1;}
+    if(curN<fil){printf("\n#3: %f",dxi3);curN=curN+ 1;}
+    if(curN<fil){printf("\n#4: %f",dxi4);curN=curN+ 1;}
+    if(curN<fil){printf("\n#5: %f",dxi5);curN=curN+ 1;}
+    if(curN<fil){printf("\n#6: %f",dxi6);curN=curN+ 1;}
+    if(curN<fil){printf("\n#7: %f",dxi7);curN=curN+ 1;}
+    if(curN<fil){printf("\n#8: %f",dxi8);curN=curN+ 1;}
+    if(curN<fil){printf("\n#9: %f",dxi9);curN=curN+ 1;}
+    if(curN<fil){printf("\n#10: %f",dxi10);curN=curN+ 1;}
+    curN=0;
+    printf("\nFiXi:");
+    if(curN<fil){printf("\n#1: %f",fixi1);curN=curN+ 1;}
+    if(curN<fil){printf("\n#2: %f",fixi2);curN=curN+ 1;}
+    if(curN<fil){printf("\n#3: %f",fixi3);curN=curN+ 1;}
+    if(curN<fil){printf("\n#4: %f",fixi4);curN=curN+ 1;}
+    if(curN<fil){printf("\n#5: %f",fixi5);curN=curN+ 1;}
+    if(curN<fil){printf("\n#6: %f",fixi6);curN=curN+ 1;}
+    if(curN<fil){printf("\n#7: %f",fixi7);curN=curN+ 1;}
+    if(curN<fil){printf("\n#8: %f",fixi8);curN=curN+ 1;}
+    if(curN<fil){printf("\n#9: %f",fixi9);curN=curN+ 1;}
+    if(curN<fil){printf("\n#10: %f",fixi10);curN=curN+ 1;}
+    curN=0;
+    printf("\nMedia: %f",Media);
+    printf("\nfi(xi-x)²:");
+    if(curN<fil){printf("\n#1: %d(%f-%f)² = %f",dfi1,dxi1,Media,fixixC1);curN=curN+ 1;}
+    if(curN<fil){printf("\n#2: %d(%f-%f)² = %f",dfi2,dxi2,Media,fixixC2);curN=curN+ 1;}
+    if(curN<fil){printf("\n#3: %d(%f-%f)² = %f",dfi3,dxi3,Media,fixixC3);curN=curN+ 1;}
+    if(curN<fil){printf("\n#4: %d(%f-%f)² = %f",dfi4,dxi4,Media,fixixC4);curN=curN+ 1;}
+    if(curN<fil){printf("\n#5: %d(%f-%f)² = %f",dfi5,dxi5,Media,fixixC5);curN=curN+ 1;}
+    if(curN<fil){printf("\n#6: %d(%f-%f)² = %f",dfi6,dxi6,Media,fixixC6);curN=curN+ 1;}
+    if(curN<fil){printf("\n#7: %d(%f-%f)² = %f",dfi7,dxi7,Media,fixixC7);curN=curN+ 1;}
+    if(curN<fil){printf("\n#8: %d(%f-%f)² = %f",dfi8,dxi8,Media,fixixC8);curN=curN+ 1;}
+    if(curN<fil){printf("\n#9: %d(%f-%f)² = %f",dfi9,dxi9,Media,fixixC9);curN=curN+ 1;}
+    if(curN<fil){printf("\n#10: %d(%f-%f)² = %f",dfi10,dxi10,Media,fixixC10);curN=curN+ 1;}curN=0;
+    printf("\nS² = %f\nS = %f",S2,S);
+    printf("\nModa = %f",Moda);
+    printf("\nMediana = %f",Mediana);
+   
+    printf("\nFin");return 0;
+}
