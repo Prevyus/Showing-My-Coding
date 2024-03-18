@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+char let[100];
+int lar=0;
+int ubi;
+int j,i,x,y,a;
+
+int main()
+{
+    printf("\nEnter a word: ");
+    scanf("%s",&let);
+   
+    for(j=0;let[lar]!=0;j++)
+    {
+        lar = j;
+    } j=lar+1; //printf("\n%d",j);
+    printf("\nYour word has %d characters.",lar);
+   
+    printf("\nEnter location of asterisk between 0 y %d: ",lar);
+    scanf("%d",&ubi);
+    printf("\n%c",let[0]);
+    for(i=1;i<lar;i++)
+    {
+        if(i==ubi)
+        {
+            printf("*");
+        }
+        printf("%c",let[i]);
+    }
+   
+   
+    return 0;
+}
